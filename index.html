@@ -48,7 +48,7 @@
         <!-- Efecto de charco -->
         <div class="absolute w-72 h-72 bg-green-500 clip-puddle animate-fade-in-right"></div>
         <!-- Imagen centrada -->
-        <img src="https://png.pngtree.com/element_our/20240816/93e044085ac13ad7d35fb3416d68a67b.png" alt="Foto de Roy" class="relative z-10 w-56 h-56 object-cover rounded-full center-image">
+        <img src="https://lynx-pay.com/wp-content/uploads/2024/09/hombre-sosteniendo-laptop.png" alt="Foto de Roy" class="relative z-10 w-56 h-56 object-cover rounded-full center-image">
     </div>
 </div>
 
@@ -91,6 +91,68 @@
         const header = document.querySelector('header');
         header.classList.toggle('scrolled', window.scrollY > 50);
     });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+  // Lista de proyectos
+  const projects = [
+    { title: "Proyecto 1", description: "Descripción breve del proyecto 1.", image: "https://aaron-russell.co.uk/_gatsby/image/98b28d737b51ae2d359687a5e45c67b9/008158768e0040463898135da34bc4a3/blake-connally-B3l0g6HLxr8-unsplashd.jpg?u=https%3A%2F%2Fimages.ctfassets.net%2Fgq2ceh3skqu1%2F7rSA0uqilxTrnqqnQJ8spg%2F0bf76252fd48541e2a658ff8966cd4be%2Fblake-connally-B3l0g6HLxr8-unsplashd.jpg&a=w%3D750%26h%3D500%26fm%3Djpg%26q%3D75&cd=2023-03-31T23%3A02%3A36.215Z" },
+    { title: "Proyecto 2", description: "Descripción breve del proyecto 2.", image: "https://www.mu.my/files/uploads/mu-php-mysql-laravel-training.png" },
+    { title: "Proyecto 3", description: "Descripción breve del proyecto 3.", image: "https://d3puay5pkxu9s4.cloudfront.net/curso/12732/800_imagen.jpg" },
+    { title: "Proyecto 4", description: "Descripción breve del proyecto 4.", image: "https://designimador.com.br/wp-content/uploads/2022/09/curso-de-figma.png" },
+    { title: "Proyecto 5", description: "Descripción breve del proyecto 5.", image: "https://via.placeholder.com/400" },
+    { title: "Proyecto 6", description: "Descripción breve del proyecto 6.", image: "https://via.placeholder.com/400" },
+    { title: "Proyecto 7", description: "Descripción breve del proyecto 7.", image: "https://via.placeholder.com/400" },
+    { title: "Proyecto 8", description: "Descripción breve del proyecto 8.", image: "https://via.placeholder.com/400" },
+    { title: "Proyecto 9", description: "Descripción breve del proyecto 9.", image: "https://via.placeholder.com/400" },
+  ];
+
+  // Configuración de la paginación
+  const projectsPerPage = 3;
+  let currentPage = 1;
+
+  // Función para renderizar los proyectos
+  function renderProjects(page) {
+    const projectsList = document.getElementById("projects-list");
+    projectsList.innerHTML = ""; // Limpiar proyectos anteriores
+    const startIndex = (page - 1) * projectsPerPage;
+    const endIndex = startIndex + projectsPerPage;
+    const projectsToShow = projects.slice(startIndex, endIndex);
+
+    projectsToShow.forEach((project, index) => {
+      const projectCard = document.createElement("div");
+      projectCard.className = "max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card";
+      projectCard.innerHTML = `
+        <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-2xl font-bold text-green-500">${project.title}</h3>
+          <p class="text-gray-600 mb-4">${project.description}</p>
+          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
+        </div>
+      `;
+      projectsList.appendChild(projectCard);
+
+      // Retraso para la animación de fade-in
+      setTimeout(() => {
+        projectCard.classList.add("visible");
+      }, 200 * index);
+    });
+  }
+
+  // Manejador de la paginación
+  const paginationButtons = document.querySelectorAll(".pagination-button");
+  paginationButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      currentPage = parseInt(button.dataset.page);
+      renderProjects(currentPage);
+    });
+  });
+
+  // Renderizar la primera página al cargar
+  renderProjects(currentPage);
+});
+
 </script>
 
 
@@ -101,7 +163,7 @@
       <!-- Lado izquierdo con imagen -->
       <div class="w-full md:w-1/2 flex justify-center mb-10 md:mb-0 animate-fade-in-left">
         <div class="relative">
-          <img src="https://img.freepik.com/foto-gratis/hombre-computadora-portatil-que-presenta-algo_1368-5030.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726876800&semt=ais_hybrid" alt="Foto de Roy" class="w-64 h-64 object-cover rounded-full shadow-lg">
+          <img src="https://png.pngtree.com/png-vector/20240521/ourmid/pngtree-a-man-holding-laptop-that-says-the-word-on-it-png-image_12503596.png" alt="Foto de Roy" class="w-64 h-64 object-cover rounded-full shadow-lg">
           <div class="absolute top-0 left-0 w-full h-full bg-green-500 opacity-20 rounded-full"></div>
         </div>
       </div>
@@ -241,47 +303,78 @@
       </div>
     </div>
   </section>
-  <!-- Sección Proyectos -->
-<section id="projects" class="py-20 bg-white">
-    <div class="container mx-auto text-center mb-12">
-      <h2 class="text-4xl font-bold text-green-500 mb-10 animate-fade-in-up">Proyectos Destacados</h2>
-      <p class="text-lg text-gray-700 mb-10 animate-fade-in-up">Aquí hay algunas de las soluciones que he desarrollado.</p>
-    </div>
-    <div class="flex flex-wrap justify-center">
-      <div class="max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 animate-fade-in-up">
-        <img src="https://via.placeholder.com/400" alt="Proyecto 1" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-2xl font-bold text-green-500">Proyecto 1</h3>
-          <p class="text-gray-600 mb-4">Descripción breve del proyecto. Se enfoca en solucionar problemas específicos usando tecnología avanzada.</p>
-          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
-        </div>
-      </div>
-      <div class="max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 animate-fade-in-up">
-        <img src="https://via.placeholder.com/400" alt="Proyecto 2" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-2xl font-bold text-green-500">Proyecto 2</h3>
-          <p class="text-gray-600 mb-4">Descripción breve del proyecto. Utiliza metodologías ágiles para el desarrollo eficiente y rápido.</p>
-          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
-        </div>
-      </div>
-      <div class="max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 animate-fade-in-up">
-        <img src="https://via.placeholder.com/400" alt="Proyecto 3" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-2xl font-bold text-green-500">Proyecto 3</h3>
-          <p class="text-gray-600 mb-4">Descripción breve del proyecto. Implementa soluciones innovadoras utilizando herramientas modernas.</p>
-          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
-        </div>
-      </div>
-      <div class="max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 animate-fade-in-up">
-        <img src="https://via.placeholder.com/400" alt="Proyecto 4" class="w-full h-48 object-cover">
-        <div class="p-5">
-          <h3 class="text-2xl font-bold text-green-500">Proyecto 4</h3>
-          <p class="text-gray-600 mb-4">Descripción breve del proyecto. Se centra en la experiencia del usuario y el diseño intuitivo.</p>
-          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Sección Proyectos Mejorada con Paginación -->
+<section id="projects" class="py-20 bg-white relative overflow-hidden">
+  <div class="container mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold text-green-500 mb-10 animate-fade-in-up">Proyectos Destacados</h2>
+    <p class="text-lg text-gray-700 mb-10 animate-fade-in-up">Aquí hay algunas de las soluciones que he desarrollado.</p>
+  </div>
+
+  <!-- Contenedor de proyectos -->
+  <div id="projects-list" class="flex flex-wrap justify-center"></div>
+
+  <!-- Paginación -->
+  <div class="flex justify-center mt-8">
+    <button class="px-4 py-2 mx-1 bg-green-500 text-white rounded-lg hover:bg-green-600 pagination-button" data-page="1">1</button>
+    <button class="px-4 py-2 mx-1 bg-green-500 text-white rounded-lg hover:bg-green-600 pagination-button" data-page="2">2</button>
+    <button class="px-4 py-2 mx-1 bg-green-500 text-white rounded-lg hover:bg-green-600 pagination-button" data-page="3">3</button>
+    <!-- Agregar más botones según la cantidad de proyectos -->
+  </div>
+</section>
+
+<!-- Estilos adicionales -->
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out;
+  }
+
+  .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Ajustes de estilo para la paginación */
+  .pagination-button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .pagination-button:hover {
+    transform: scale(1.1);
+  }
+
+  /* Estilo para proyectos en mobile */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 3xl;
+    }
+
+    p {
+      font-size: lg;
+    }
+
+    .project-card {
+      width: 100%;
+    }
+  }
+</style>
+
 <!-- Sección de Contacto Mejorada con Efecto Parallax -->
 <section id="contact" class="relative py-20">
   <!-- Imagen de fondo con efecto parallax -->
