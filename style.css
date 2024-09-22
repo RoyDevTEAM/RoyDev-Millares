@@ -1,0 +1,182 @@
+/* Navbar */
+.navbar {
+    transition: background-color 0.5s ease, font-size 0.5s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+/* Menú móvil */
+#mobile-menu {
+    transition: max-height 0.3s ease-out;
+}
+
+#mobile-menu ul {
+    padding: 10px;
+}
+
+/* Efecto de charco */
+.clip-puddle {
+    clip-path: polygon(50% 0%, 100% 30%, 90% 100%, 50% 80%, 10% 100%, 0% 30%);
+    opacity: 0.7; /* Ajusta la opacidad */
+    filter: blur(10px); /* Desenfoque suave */
+    transition: transform 0.3s ease; /* Transición suave */
+    display: flex;
+    justify-content: center; /* Centramos la figura */
+    align-items: center; /* Centramos la figura verticalmente */
+}
+
+/* Crecimiento al hacer hover */
+.clip-puddle:hover {
+    transform: scale(1.05); /* Crece al pasar el cursor */
+}
+
+/* Imagen centrada dentro del charco */
+.center-image {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrar absolutamente la imagen dentro del charco */
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+    .clip-puddle {
+        width: 60%; /* Tamaño ajustado para pantallas pequeñas */
+        height: 60%; /* Tamaño ajustado para pantallas pequeñas */
+        top: 0;
+        right: 0;
+    }
+
+    .center-image {
+        width: 50%; /* Redimensionar la imagen en móvil */
+        height: 50%; /* Redimensionar la imagen en móvil */
+    }
+}
+
+/* Animaciones Personalizadas */
+@keyframes fade-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in-left {
+    animation: fade-in-left 1s ease-out forwards;
+}
+
+.animate-fade-in-right {
+    animation: fade-in-right 1s ease-out forwards;
+}
+
+/* Ajustes para evitar superposición */
+@media (max-width: 768px) {
+    .navbar {
+        z-index: 1000; /* Asegura que el navbar esté por encima */
+    }
+    section.h-screen {
+        padding-top: 80px; /* Deja espacio para el navbar fijo */
+    }
+    h1 {
+        text-align: center; /* Centra el texto en móvil */
+    }
+    p {
+        text-align: center; /* Centra el texto en móvil */
+    }
+    
+}
+
+/* Añadir un poco de espacio entre las barras */
+.flex {
+    margin-bottom: 20px;
+}
+
+/* Estilos para la sección de contacto con transparencia y efectos de parallax */
+section#contact {
+    position: relative;
+    overflow: hidden;
+}
+
+section#contact .bg-cover {
+    background-attachment: fixed; /* Parallax */
+}
+
+form {
+    backdrop-filter: blur(15px); /* Desenfoque más intenso */
+    background: rgba(255, 255, 255, 0.3); /* Fondo translúcido */
+    border-radius: 12px; /* Bordes redondeados más visibles */
+}
+
+input, textarea {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-translúcido */
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2); /* Efecto de sombra al enfocar */
+}
+
+button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.3); /* Sombra de botón visible */
+}
+
+button:hover {
+    transform: scale(1.1); /* Escala mayor al hover */
+    box-shadow: 0 6px 20px rgba(0, 128, 0, 0.4); /* Más sombra al hover */
+}
+
+/* Animación de aparición */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1s ease-in-out;
+}
+
+
+
+/* Estilos del footer */
+footer {
+    background-color: #1f2937; /* Gray-800 */
+}
+
+footer h3 {
+    font-size: 1.25rem; /* Texto más grande para el título */
+}
+
+footer a {
+    transition: color 0.3s;
+}
+
+/* Efecto de sombra */
+footer p {
+    opacity: 0.7; /* Menor opacidad para el texto de derechos reservados */
+}

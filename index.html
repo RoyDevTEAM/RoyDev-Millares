@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Roydev</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-800">
+
+<!-- Navbar -->
+<header class="fixed top-0 w-full z-50 navbar">
+    <nav class="container mx-auto flex justify-between items-center p-5">
+        <div class="text-2xl font-bold text-green-500">Roydev Millares</div>
+        <ul class="hidden md:flex space-x-6 text-lg">
+            <li><a href="#about" class="hover:text-green-500">Sobre mí</a></li>
+            <li><a href="#projects" class="hover:text-green-500">Proyectos</a></li>
+            <li><a href="#skills" class="hover:text-green-500">Habilidades</a></li>
+            <li><a href="#contact" class="hover:text-green-500">Contacto</a></li>
+        </ul>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-green-500 text-3xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- Menu mobile -->
+    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 w-full bg-white shadow-lg">
+        <ul class="flex flex-col items-center p-5 space-y-2">
+            <li><a href="#about" class="hover:text-green-500">Sobre mí</a></li>
+            <li><a href="#projects" class="hover:text-green-500">Proyectos</a></li>
+            <li><a href="#skills" class="hover:text-green-500">Habilidades</a></li>
+            <li><a href="#contact" class="hover:text-green-500">Contacto</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Portada -->
+<section class="h-screen flex flex-col md:flex-row items-center">
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-5 h-full">
+      <div class="w-full md:w-1/2 flex justify-center md:mt-0 mt-10 order-1 md:order-2">
+        <div class="relative flex justify-center items-center">
+            <!-- Efecto de charco -->
+            <div class="absolute w-72 h-72 bg-green-500 clip-puddle animate-fade-in-right"></div>
+            <!-- Imagen centrada -->
+            <img src="https://png.pngtree.com/element_our/20240816/93e044085ac13ad7d35fb3416d68a67b.png" alt="Foto de Roy" class="relative z-10 w-56 h-56 object-cover rounded-full center-image">
+        </div>
+    </div>
+    
+        <!-- Lado izquierdo con descripción -->
+        <div class="w-full md:w-1/2 text-left space-y-5 md:pr-10 flex flex-col order-2 md:order-1">
+            <h1 class="text-3xl md:text-5xl font-bold text-green-500 animate-fade-in-left">Hola, soy Roy Millares</h1>
+            <p class="text-sm md:text-lg text-gray-700 animate-fade-in-left">
+                Desarrollador apasionado por crear soluciones innovadoras con tecnologías modernas. Vamos a construir algo increíble juntos.
+            </p>
+            <!-- Iconos de redes sociales y botones -->
+            <div class="flex flex-col items-center space-y-4 animate-fade-in-left">
+                <div class="flex space-x-6">
+                    <a href="#" class="text-2xl text-green-500 hover:text-green-600"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-2xl text-green-500 hover:text-green-600"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-2xl text-green-500 hover:text-green-600"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="mt-5 inline-block px-8 py-3 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-105">
+                        Contáctame
+                    </a>
+                    <a href="#cv" class="mt-5 inline-block px-8 py-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition transform hover:scale-105">
+                        CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Script para el toggle del menú en mobile -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+</script>
+
+
+
+    <!-- Sección Sobre Mí -->
+<section id="about" class="py-20 bg-white">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <!-- Lado izquierdo con imagen -->
+      <div class="w-full md:w-1/2 flex justify-center mb-10 md:mb-0 animate-fade-in-left">
+        <div class="relative">
+          <img src="https://img.freepik.com/foto-gratis/hombre-computadora-portatil-que-presenta-algo_1368-5030.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726876800&semt=ais_hybrid" alt="Foto de Roy" class="w-64 h-64 object-cover rounded-full shadow-lg">
+          <div class="absolute top-0 left-0 w-full h-full bg-green-500 opacity-20 rounded-full"></div>
+        </div>
+      </div>
+      <!-- Lado derecho con descripción -->
+      <div class="w-full md:w-1/2 text-center md:text-left space-y-5 animate-fade-in-right">
+        <h2 class="text-4xl font-bold text-green-500">Sobre mí</h2>
+        <p class="text-lg text-gray-700">
+          Soy Roy Millares, un desarrollador apasionado por la tecnología y el diseño. Me encanta crear soluciones modernas que simplifiquen la vida de las personas. Mi misión es construir proyectos que no solo se vean bien, sino que también funcionen de manera eficiente.
+        </p>
+        <a href="#projects" class="mt-5 inline-block px-8 py-3 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-105">
+          Ver proyectos
+        </a>
+      </div>
+    </div>
+  </section>
+  
+<!-- Sección Habilidades -->
+<section id="skills" class="py-20 bg-gray-100">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-green-500 mb-10 animate-fade-in-up">Habilidades</h2>
+      <p class="text-lg text-gray-700 mb-10 animate-fade-in-up">Domino diversas herramientas y tecnologías para ofrecer soluciones efectivas.</p>
+      <div class="space-y-10">
+        <div class="flex items-center justify-center">
+          <div class="w-1/3 text-left pr-5">
+            <h3 class="text-2xl font-bold text-green-500">Frontend <i class="fab fa-angular"></i></h3>
+          </div>
+          <div class="w-2/3">
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200">
+                    90%
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 bg-gray-200 rounded">
+                <div class="w-9/10 bg-green-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="w-1/3 text-left pr-5">
+            <h3 class="text-2xl font-bold text-green-500">Backend <i class="fab fa-laravel"></i></h3>
+          </div>
+          <div class="w-2/3">
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200">
+                    80%
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 bg-gray-200 rounded">
+                <div class="w-4/5 bg-green-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="w-1/3 text-left pr-5">
+            <h3 class="text-2xl font-bold text-green-500">Bases de Datos <i class="fas fa-database"></i></h3>
+          </div>
+          <div class="w-2/3">
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200">
+                    75%
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 bg-gray-200 rounded">
+                <div class="w-3/4 bg-green-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="w-1/3 text-left pr-5">
+            <h3 class="text-2xl font-bold text-green-500">Liderazgo <i class="fas fa-users"></i></h3>
+          </div>
+          <div class="w-2/3">
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200">
+                    85%
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 bg-gray-200 rounded">
+                <div class="w-5/6 bg-green-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="w-1/3 text-left pr-5">
+            <h3 class="text-2xl font-bold text-green-500">Control de Versiones <i class="fab fa-git-alt"></i></h3>
+          </div>
+          <div class="w-2/3">
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200">
+                    70%
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 bg-gray-200 rounded">
+                <div class="w-7/10 bg-green-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="w-1/3 text-left pr-5">
+            <h3 class="text-2xl font-bold text-green-500">Contenedores <i class="fab fa-docker"></i></h3>
+          </div>
+          <div class="w-2/3">
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200">
+                    60%
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 bg-gray-200 rounded">
+                <div class="w-3/5 bg-green-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Sección Proyectos -->
+<section id="projects" class="py-20 bg-white">
+    <div class="container mx-auto text-center mb-12">
+      <h2 class="text-4xl font-bold text-green-500 mb-10 animate-fade-in-up">Proyectos Destacados</h2>
+      <p class="text-lg text-gray-700 mb-10 animate-fade-in-up">Aquí hay algunas de las soluciones que he desarrollado.</p>
+    </div>
+    <div class="flex flex-wrap justify-center">
+      <div class="max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 animate-fade-in-up">
+        <img src="https://via.placeholder.com/400" alt="Proyecto 1" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-2xl font-bold text-green-500">Proyecto 1</h3>
+          <p class="text-gray-600 mb-4">Descripción breve del proyecto. Se enfoca en solucionar problemas específicos usando tecnología avanzada.</p>
+          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
+        </div>
+      </div>
+      <div class="max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 animate-fade-in-up">
+        <img src="https://via.placeholder.com/400" alt="Proyecto 2" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-2xl font-bold text-green-500">Proyecto 2</h3>
+          <p class="text-gray-600 mb-4">Descripción breve del proyecto. Utiliza metodologías ágiles para el desarrollo eficiente y rápido.</p>
+          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
+        </div>
+      </div>
+      <div class="max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 animate-fade-in-up">
+        <img src="https://via.placeholder.com/400" alt="Proyecto 3" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-2xl font-bold text-green-500">Proyecto 3</h3>
+          <p class="text-gray-600 mb-4">Descripción breve del proyecto. Implementa soluciones innovadoras utilizando herramientas modernas.</p>
+          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
+        </div>
+      </div>
+      <div class="max-w-xs m-5 bg-gray-100 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 animate-fade-in-up">
+        <img src="https://via.placeholder.com/400" alt="Proyecto 4" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-2xl font-bold text-green-500">Proyecto 4</h3>
+          <p class="text-gray-600 mb-4">Descripción breve del proyecto. Se centra en la experiencia del usuario y el diseño intuitivo.</p>
+          <a href="#" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition transform hover:scale-105">Ver Proyecto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Sección de Contacto Mejorada con Efecto Parallax -->
+<section id="contact" class="relative py-20">
+  <!-- Imagen de fondo con efecto parallax -->
+  <div class="absolute inset-0 bg-cover bg-fixed bg-center " style="background-image: url('https://cdn.pixabay.com/photo/2018/03/02/19/21/nature-3194001_640.jpg');"></div>
+  
+  <!-- Contenido de la sección -->
+  <div class="relative container mx-auto text-center mb-12">
+    <h2 class="text-5xl font-bold text-white mb-6 animate-fade-in-up">¡Hablemos!</h2>
+    <p class="text-2xl text-gray-200 mb-10 animate-fade-in-up">Déjame saber en qué puedo ayudarte, estaré encantado de ponerme en contacto contigo.</p>
+  </div>
+
+  <div class="flex justify-center relative">
+    <form class="bg-gradient-to-r from-white/30 to-gray-800/30 backdrop-blur-md shadow-2xl rounded-xl p-10 w-full max-w-lg animate-fade-in-up border border-white/20">
+      <div class="mb-6">
+        <label for="name" class="block text-white font-semibold mb-2">Nombre</label>
+        <input type="text" id="name" class="w-full px-5 py-3 rounded-lg shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-700 transition-transform duration-300 transform hover:scale-105" placeholder="Tu Nombre" required>
+      </div>
+
+      <div class="mb-6">
+        <label for="email" class="block text-white font-semibold mb-2">Correo Electrónico</label>
+        <input type="email" id="email" class="w-full px-5 py-3 rounded-lg shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-700 transition-transform duration-300 transform hover:scale-105" placeholder="Tu Correo" required>
+      </div>
+
+      <div class="mb-6">
+        <label for="message" class="block text-white font-semibold mb-2">Mensaje</label>
+        <textarea id="message" rows="5" class="w-full px-5 py-3 rounded-lg shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-700 transition-transform duration-300 transform hover:scale-105" placeholder="Tu Mensaje" required></textarea>
+      </div>
+
+      <div class="flex justify-center">
+        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-green-400 to-green-600 text-white font-bold rounded-full shadow-lg hover:scale-110 transform transition-transform duration-300">
+          Enviar Mensaje
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+   
+   <!-- Footer -->
+<footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto text-center">
+      <div class="mb-4">
+        <h3 class="text-lg font-bold">Conéctate Conmigo</h3>
+        <div class="flex justify-center space-x-6 mt-2">
+          <a href="#" class="text-white hover:text-green-500 transition duration-300">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="#" class="text-white hover:text-green-500 transition duration-300">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="#" class="text-white hover:text-green-500 transition duration-300">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+        </div>
+      </div>
+      <p class="text-sm">&copy; 2024 Roy Milleres. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+
+ 
+</body>
+</html>
