@@ -6,13 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Roider Millares - Web Developer Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
   <!-- Tailwind CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-  <!-- FontAwesome CDN -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
     /* Animación de fadeIn */
 @keyframes fadeIn {
@@ -36,11 +33,11 @@
 
 /* Efecto de gota */
 .drop-shape {
-  background: radial-gradient(circle at 50% 25%, #00BFFF, transparent 70%);
-  border-radius: 50%;
+clip-path: polygon(50% 0%, 100% 30%, 90% 100%, 50% 80%, 10% 100%, 0% 30%);
+
   position: relative;
-  width: 350px;
-  height: 550px;
+  width: 450px;
+  height: 590px;
 }
 
 .drop-shape img {
@@ -50,8 +47,8 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
   object-fit: cover;
-  width: 280px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
 }
 
 /* Textos y botones con color 🩵 */
@@ -78,8 +75,8 @@
     height: 150px;
   }
 
-  h1 {
-    font-size: 2.5rem;
+  #nombre {
+    font-size: 1.5rem;
   }
 
   p {
@@ -169,279 +166,7 @@ button#hamburger:active + #mobile-menu {
     flex-direction: column;
   }
 }
-
-
-  </style>
-</head>
-<body class="bg-gray-900 text-gray-100">
-
- <!-- Header/Navbar -->
-<header class="bg-gray-800 sticky top-0 z-50 shadow-md">
-    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-3xl font-bold">
-        <a href="#" class="hover-lightblue transition-all">Roider Millares</a>
-      </div>
-      <ul class="hidden md:flex space-x-8 text-lg">
-        <li><a href="#about" class="hover-lightblue transition-all">About</a></li>
-        <li><a href="#projects" class="hover-lightblue transition-all">Projects</a></li>
-        <li><a href="#contact" class="hover-lightblue transition-all">Contact</a></li>
-      </ul>
-      <div class="md:hidden">
-        <button id="hamburger" class="text-2xl focus:outline-none">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </nav>
-    
-    <!-- Menu hamburguesa para móvil -->
-    <ul id="mobile-menu" class="hidden flex-col items-center bg-gray-800 text-lg space-y-6 p-6 absolute top-16 left-0 w-full z-40">
-      <li><a href="#about" class="hover-lightblue transition-all">About</a></li>
-      <li><a href="#projects" class="hover-lightblue transition-all">Projects</a></li>
-      <li><a href="#contact" class="hover-lightblue transition-all">Contact</a></li>
-    </ul>
-  </header>
-  
- <!-- Portada -->
-<section class="h-screen flex items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900 px-4">
-    <div class="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl mx-auto animate-fadeIn space-y-10 lg:space-y-0 lg:space-x-10">
-      <!-- Imagen con efecto de gota -->
-      <div class="drop-shape flex-shrink-0">
-        <img src="https://lynx-pay.com/wp-content/uploads/2024/09/hombre-sosteniendo-laptop.png" alt="Roider Millares">
-      </div>
-      <!-- Descripción -->
-      <div class="w-full md:w-1/2 text-left space-y-5 md:pr-10 flex flex-col order-2 md:order-1 mt-10">
-        <h1 class="text-5xl font-bold mb-6 text-center lg:text-left">I'm Roider Millares</h1>
-        <p class="text-lg mb-6 text-center lg:text-left">A passionate web developer who loves to create beautiful, responsive websites. I specialize in building interactive web experiences using modern web technologies.</p>
-        <div class="flex justify-center lg:justify-start">
-          <a href="#projects" class="px-8 py-4 bg-gray-700 hover-bg-lightblue text-lg font-semibold rounded-lg hover-scale transition-all">
-            Check My Work
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  
-<script>
-
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('show');
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".animate-on-scroll");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    elements.forEach((el) => observer.observe(el));
-  });
-</script>
- <!-- About Section -->
-<section id="about" class="py-16 bg-gray-800 text-gray-200 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Título -->
-      <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll opacity-0">About Me</h2>
-      
-      <!-- Contenido principal -->
-      <div class="flex flex-col lg:flex-row items-center justify-center lg:space-x-12 animate-on-scroll opacity-0">
-        <!-- Imagen -->
-        <div class="relative w-80 h-80 mb-12 lg:mb-0">
-          <div class="drop-shape-lg">
-            <img src="https://lynx-pay.com/wp-content/uploads/2024/09/hombre-sosteniendo-laptop.png" alt="Roider Millares" class="absolute inset-0 w-full h-full object-cover rounded-full">
-          </div>
-        </div>
-        
-        <!-- Descripción -->
-        <div class="max-w-md text-left">
-          <h3 class="text-3xl font-bold mb-4">Roider Millares</h3>
-          <p class="text-lg mb-6">
-            I'm a passionate web developer with a love for creating intuitive, responsive, and modern web applications. With years of experience in front-end development and a deep understanding of back-end technologies, I specialize in delivering solutions that exceed client expectations.
-          </p>
-          <ul class="mb-6 space-y-2">
-            <li><i class="fas fa-code text-lightblue"></i> Frontend: HTML, CSS, JavaScript, Angular, Tailwind CSS</li>
-            <li><i class="fas fa-server text-lightblue"></i> Backend: Node.js, .NET, APIs</li>
-            <li><i class="fas fa-database text-lightblue"></i> Databases: MySQL, MongoDB, SQL Server</li>
-          </ul>
-          <a href="#projects" class="px-8 py-4 bg-gray-700 hover-bg-lightblue text-lg font-semibold rounded-lg hover-scale transition-all">
-            See My Work
-          </a>
-        </div>
-      </div>
-  
-      <!-- Línea de tiempo de experiencia -->
-      <div class="mt-16 animate-on-scroll opacity-0">
-        <h3 class="text-3xl font-bold text-center mb-8">Experience Timeline</h3>
-        <div class="space-y-6 lg:max-w-5xl mx-auto">
-          <!-- Entrada de experiencia -->
-          <div class="flex flex-col lg:flex-row items-start lg:items-center">
-            <div class="text-lightblue text-2xl font-bold mr-6">2024</div>
-            <div>
-              <h4 class="text-xl font-semibold">Senior Web Developer - TechCorp</h4>
-              <p>Developed complex web applications using modern frameworks and technologies to enhance user experience and performance.</p>
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row items-start lg:items-center">
-            <div class="text-lightblue text-2xl font-bold mr-6">2023</div>
-            <div>
-              <h4 class="text-xl font-semibold">Full Stack Developer - InnovateX</h4>
-              <p>Worked on full-stack solutions, integrating front-end design with robust back-end APIs for seamless functionality.</p>
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row items-start lg:items-center">
-            <div class="text-lightblue text-2xl font-bold mr-6">2022</div>
-            <div>
-              <h4 class="text-xl font-semibold">Web Developer Intern - DevHub</h4>
-              <p>Collaborated with teams to create dynamic websites and improve existing designs, learning the best practices in development.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Projects Section Redesign -->
-<section id="projects" class="py-16 bg-gray-900 text-gray-200 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6">
-    <!-- Título con animación -->
-    <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll opacity-0">Featured Projects</h2>
-
-    <!-- Grid de proyectos -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-on-scroll opacity-0">
-
-      <!-- Project Card 1 -->
-      <div class="project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
-        <div class="relative z-10">
-          <img src="https://cd.foundation/wp-content/uploads/sites/78/2020/09/devops.png" alt="Project One Image" class="w-full h-64 object-cover rounded-lg">
-        </div>
-        <div class="project-content mt-4">
-          <h3 class="text-2xl font-semibold text-lightblue mb-2">Project One</h3>
-          <p class="text-gray-400 mb-4">A modern web app with full-stack development, showcasing advanced functionalities and great UX.</p>
-          <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
-        </div>
-        <!-- Efecto Hover 3D -->
-        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-500 ease-in-out transform hover:scale-105">
-          <div class="text-center text-gray-100">
-            <h3 class="text-3xl font-semibold mb-2">Explore</h3>
-            <p>Modern web app featuring top-notch UI/UX</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project Card 2 -->
-      <div class="project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
-        <div class="relative z-10">
-          <img src="https://videocursos.co/wp-content/uploads/2022/10/docker-curso.webp" alt="Project Two Image" class="w-full h-64 object-cover rounded-lg">
-        </div>
-        <div class="project-content mt-4">
-          <h3 class="text-2xl font-semibold text-lightblue mb-2">Project Two</h3>
-          <p class="text-gray-400 mb-4">An innovative mobile-friendly design with powerful backend integration for seamless performance.</p>
-          <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
-        </div>
-        <!-- Efecto Hover 3D -->
-        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-500 ease-in-out transform hover:scale-105">
-          <div class="text-center text-gray-100">
-            <h3 class="text-3xl font-semibold mb-2">Discover</h3>
-            <p>Mobile design with robust backend integration</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project Card 3 -->
-      <div class="project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
-        <div class="relative z-10">
-          <img src="https://media.licdn.com/dms/image/D4E12AQGlGLulxo94Dw/article-cover_image-shrink_720_1280/0/1715704795156?e=2147483647&v=beta&t=rxWa7W_PQ3PU5kln1RePaUGY8I6csqhS-stsaj8bhAM" alt="Project Three Image" class="w-full h-64 object-cover rounded-lg">
-        </div>
-        <div class="project-content mt-4">
-          <h3 class="text-2xl font-semibold text-lightblue mb-2">Project Three</h3>
-          <p class="text-gray-400 mb-4">An e-commerce platform built with a clean UI and smooth user interactions, optimized for performance.</p>
-          <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
-        </div>
-        <!-- Efecto Hover 3D -->
-        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-500 ease-in-out transform hover:scale-105">
-          <div class="text-center text-gray-100">
-            <h3 class="text-3xl font-semibold mb-2">Shop</h3>
-            <p>E-commerce with optimized performance</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Partículas en fondo para efecto dinámico -->
-  <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-  </div>
-</section>
-
-  <!-- Skills Section -->
-<section id="skills" class="py-16 bg-gray-900 text-gray-200 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Título con animación -->
-      <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll opacity-0">My Skills</h2>
-  
-      <!-- Contenedor de Habilidades -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-on-scroll opacity-0">
-        <!-- Skill Card 1 -->
-        <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg relative group">
-          <div class="skill-content text-center">
-            <i class="fas fa-code text-6xl text-lightblue mb-4 animate-pulse"></i>
-            <h3 class="text-2xl font-semibold mb-2">Web Development</h3>
-            <div class="skill-bar bg-gray-700 rounded-full h-3 mb-4 relative overflow-hidden">
-              <div class="skill-progress bg-lightblue h-full rounded-full" style="width: 90%;"></div>
-            </div>
-            <p class="text-gray-400">HTML, CSS, JavaScript, Angular, React</p>
-          </div>
-        </div>
-  
-        <!-- Skill Card 2 -->
-        <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg relative group">
-          <div class="skill-content text-center">
-            <i class="fas fa-server text-6xl text-lightblue mb-4 animate-pulse"></i>
-            <h3 class="text-2xl font-semibold mb-2">Backend Development</h3>
-            <div class="skill-bar bg-gray-700 rounded-full h-3 mb-4 relative overflow-hidden">
-              <div class="skill-progress bg-lightblue h-full rounded-full" style="width: 85%;"></div>
-            </div>
-            <p class="text-gray-400">Node.js, .NET Core, Python</p>
-          </div>
-        </div>
-  
-        <!-- Skill Card 3 -->
-        <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg relative group">
-          <div class="skill-content text-center">
-            <i class="fas fa-mobile-alt text-6xl text-lightblue mb-4 animate-pulse"></i>
-            <h3 class="text-2xl font-semibold mb-2">Mobile Development</h3>
-            <div class="skill-bar bg-gray-700 rounded-full h-3 mb-4 relative overflow-hidden">
-              <div class="skill-progress bg-lightblue h-full rounded-full" style="width: 80%;"></div>
-            </div>
-            <p class="text-gray-400">Flutter, Swift, Kotlin</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Animaciones flotantes dinámicas -->
-    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-      <div class="skill-particle"></div>
-      <div class="skill-particle"></div>
-      <div class="skill-particle"></div>
-    </div>
-  </section>
-  <!-- Animaciones y Estilos CSS -->
-  <style>
-    @keyframes slideUpFadeIn {
+@keyframes slideUpFadeIn {
   0% {
     opacity: 0;
     transform: translateY(30px);
@@ -530,6 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
 .text-lightblue {
   color: #00BFFF;
 }
+#enviar{
+      color: #00BFFF;
+
+}
   @keyframes slideUpFadeIn {
     0% {
       opacity: 0;
@@ -541,6 +270,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   
+
+
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -550,188 +281,329 @@ document.addEventListener("DOMContentLoaded", function () {
   .visible {
     animation: slideUpFadeIn 0.8s ease-out forwards;
   }
-  /* Sección de proyectos */
-#projects {
-  position: relative;
-  background-color: #111827;
-  padding: 4rem 0;
-  color: #e5e7eb;
-  overflow: hidden;
-}
-
-/* Título */
-#projects h2 {
-  font-size: 2.5rem;
-  color: #00BFFF;
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* Estilo del grid de proyectos */
-#projects .grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* Tarjeta de proyecto */
-.project-card {
-  position: relative;
-  background-color: #1f2937;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 191, 255, 0.6);
-}
-
-/* Contenido de la tarjeta */
-.project-content {
-  padding: 2rem;
-  text-align: center;
-}
-
-.project-content h3 {
-  font-size: 1.5rem;
-  color: #00BFFF;
-  margin-bottom: 1rem;
-}
-
-.project-content p {
-  color: #9ca3af;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.project-content a {
-  font-size: 1rem;
-  color: #00BFFF;
-  transition: color 0.3s ease;
-}
-
-.project-content a:hover {
-  color: #38bdf8;
-}
-
-/* Fondo dinámico con imágenes */
-.project-card {
-  background-size: cover;
-  background-position: center;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 0;
-}
-
-/* Efecto Hover 3D */
-.project-hover-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-  text-align: center;
-  color: #00BFFF;
-  opacity: 0;
-  transition: all 0.4s ease;
-  z-index: 2;
-}
-
-.project-card:hover .project-hover-content {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-.project-card:hover .project-content {
-  opacity: 0;
-}
-
-/* Hover suave y escalado */
-.hover-scale:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Efectos de partículas en el fondo */
-.particle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background-color: rgba(0, 191, 255, 0.8);
-  border-radius: 50%;
-  animation: float 8s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-60px);
-  }
-}
-
-.particle:nth-child(1) {
-  top: 15%;
-  left: 10%;
-  animation-duration: 10s;
-  animation-delay: 0s;
-}
-
-.particle:nth-child(2) {
-  top: 50%;
-  left: 75%;
-  animation-duration: 12s;
-  animation-delay: 3s;
-}
-
-.particle:nth-child(3) {
-  top: 80%;
-  left: 40%;
-  animation-duration: 14s;
-  animation-delay: 5s;
-}
-
-/* Animación de entrada */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-.visible {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
+  
  
   </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+ <!-- Header/Navbar -->
+<header class="bg-gray-800 sticky top-0 z-50 shadow-md">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-3xl font-bold">
+        <a href="#" class="hover-lightblue transition-all">Roider Millares</a>
+      </div>
+      <ul class="hidden md:flex space-x-8 text-lg">
+        <li><a href="#about" class="hover-lightblue transition-all">About</a></li>
+        <li><a href="#projects" class="hover-lightblue transition-all">Projects</a></li>
+        <li><a href="#contact" class="hover-lightblue transition-all">Contact</a></li>
+      </ul>
+      <div class="md:hidden">
+        <button id="hamburger" class="text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Menu hamburguesa para móvil -->
+    <ul id="mobile-menu" class="hidden flex-col items-center bg-gray-800 text-lg space-y-6 p-6 absolute top-16 left-0 w-full z-40">
+      <li><a href="#about" class="hover-lightblue transition-all">About</a></li>
+      <li><a href="#projects" class="hover-lightblue transition-all">Projects</a></li>
+      <li><a href="#contact" class="hover-lightblue transition-all">Contact</a></li>
+    </ul>
+  </header>
   
-  <!-- Contact Section -->
+ <!-- Portada -->
+<section class="h-screen flex items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900 px-4">
+    <div class="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl mx-auto animate-fadeIn space-y-10 lg:space-y-0 lg:space-x-10">
+      <!-- Imagen con efecto de gota -->
+      <div class="drop-shape flex-shrink-0 ">
+        <img src="https://lynx-pay.com/wp-content/uploads/2024/09/hombre-sosteniendo-laptop.png" alt="Roider Millares">
+      </div>
+      <!-- Descripción -->
+      <div class="w-full md:w-1/2 text-left space-y-5 md:pr-10 flex flex-col order-2 md:order-1 mt-5">
+        <h1  id="nombre" class="text-5xl font-bold mb-6 text-center lg:text-left">I'm Roider Millares</h1>
+        <p class="text-lg mb-6 text-center lg:text-left">Desarrollador apasionado por crear soluciones innovadoras con tecnologías modernas. Vamos a construir algo increíble juntos.</p>
+        <div class="flex justify-center lg:justify-start">
+          <a href="#projects" class="px-8 py-4 bg-gray-700 hover-bg-lightblue text-lg font-semibold rounded-lg hover-scale transition-all">
+            Check My Work
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+<script>
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('show');
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  });
+  
+</script>
+ <!-- About Section -->
+<section id="about" class="py-16 bg-gray-800 text-gray-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Título -->
+      <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll opacity-0">About Me</h2>
+      
+      <!-- Contenido principal -->
+      <div class="flex flex-col lg:flex-row items-center justify-center lg:space-x-12 animate-on-scroll opacity-0">
+        <!-- Imagen -->
+        <div class="relative w-80 h-80 mb-12 lg:mb-0">
+          <div class="drop-shape-lg">
+            <img src="https://lynx-pay.com/wp-content/uploads/2024/09/hombre-sosteniendo-laptop.png" alt="Roider Millares" class="absolute inset-0 w-full h-full object-cover rounded-full">
+          </div>
+        </div>
+        
+        <!-- Descripción -->
+        <div class="max-w-md text-left">
+          <h3 class="text-3xl font-bold mb-4">Roider Millares</h3>
+          <p class="text-lg mb-6">
+            I'm a passionate web developer with a love for creating intuitive, responsive, and modern web applications. With years of experience in front-end development and a deep understanding of back-end technologies, I specialize in delivering solutions that exceed client expectations.
+          </p>
+          <ul class="mb-6 space-y-2">
+            <li><i class="fas fa-code text-lightblue"></i> Frontend: HTML, CSS, JavaScript, Angular, Tailwind CSS</li>
+            <li><i class="fas fa-server text-lightblue"></i> Backend: Node.js, .NET, APIs</li>
+            <li><i class="fas fa-database text-lightblue"></i> Databases: MySQL, MongoDB, SQL Server</li>
+          </ul>
+          <a href="#projects" class="px-8 py-4 bg-gray-700 hover-bg-lightblue text-lg font-semibold rounded-lg hover-scale transition-all">
+            See My Work
+          </a>
+        </div>
+      </div>
+  
+      <!-- Línea de tiempo de experiencia -->
+      <div class="mt-16 animate-on-scroll opacity-0">
+        <h3 class="text-3xl font-bold text-center mb-8">Experience Timeline</h3>
+        <div class="space-y-6 lg:max-w-5xl mx-auto">
+          <!-- Entrada de experiencia -->
+          <div class="flex flex-col lg:flex-row items-start lg:items-center">
+            <div class="text-lightblue text-2xl font-bold mr-6">2024</div>
+            <div>
+              <h4 class="text-xl font-semibold">Senior Web Developer - TechCorp</h4>
+              <p>Developed complex web applications using modern frameworks and technologies to enhance user experience and performance.</p>
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row items-start lg:items-center">
+            <div class="text-lightblue text-2xl font-bold mr-6">2023</div>
+            <div>
+              <h4 class="text-xl font-semibold">Full Stack Developer - InnovateX</h4>
+              <p>Worked on full-stack solutions, integrating front-end design with robust back-end APIs for seamless functionality.</p>
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row items-start lg:items-center">
+            <div class="text-lightblue text-2xl font-bold mr-6">2022</div>
+            <div>
+              <h4 class="text-xl font-semibold">Web Developer Intern - DevHub</h4>
+              <p>Collaborated with teams to create dynamic websites and improve existing designs, learning the best practices in development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<section id="projects" class="py-16 bg-gray-900 text-gray-200 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Título -->
+    <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+
+    <!-- Carrusel Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Project Card 1 -->
+        <div class="swiper-slide project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
+          <div class="relative z-10">
+            <img src="https://cd.foundation/wp-content/uploads/sites/78/2020/09/devops.png" alt="Project One Image" class="w-full h-64 object-cover rounded-lg">
+          </div>
+          <div class="project-content mt-4">
+            <h3 class="text-2xl font-semibold text-lightblue mb-2">Project One</h3>
+            <p class="text-gray-400 mb-4">A modern web app with full-stack development, showcasing advanced functionalities and great UX.</p>
+            <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="swiper-slide project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
+          <div class="relative z-10">
+            <img src="https://videocursos.co/wp-content/uploads/2022/10/docker-curso.webp" alt="Project Two Image" class="w-full h-64 object-cover rounded-lg">
+          </div>
+          <div class="project-content mt-4">
+            <h3 class="text-2xl font-semibold text-lightblue mb-2">Project Two</h3>
+            <p class="text-gray-400 mb-4">An innovative mobile-friendly design with powerful backend integration for seamless performance.</p>
+            <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="swiper-slide project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
+          <div class="relative z-10">
+            <img src="https://media.licdn.com/dms/image/D4E12AQGlGLulxo94Dw/article-cover_image-shrink_720_1280/0/1715704795156?e=2147483647&v=beta&t=rxWa7W_PQ3PU5kln1RePaUGY8I6csqhS-stsaj8bhAM" alt="Project Three Image" class="w-full h-64 object-cover rounded-lg">
+          </div>
+          <div class="project-content mt-4">
+            <h3 class="text-2xl font-semibold text-lightblue mb-2">Project Three</h3>
+            <p class="text-gray-400 mb-4">An e-commerce platform built with a clean UI and smooth user interactions, optimized for performance.</p>
+            <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
+          </div>
+        </div>
+        <div class="swiper-slide project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
+            <div class="relative z-10">
+              <img src="https://media.licdn.com/dms/image/D4E12AQGlGLulxo94Dw/article-cover_image-shrink_720_1280/0/1715704795156?e=2147483647&v=beta&t=rxWa7W_PQ3PU5kln1RePaUGY8I6csqhS-stsaj8bhAM" alt="Project Three Image" class="w-full h-64 object-cover rounded-lg">
+            </div>
+            <div class="project-content mt-4">
+              <h3 class="text-2xl font-semibold text-lightblue mb-2">Project Three</h3>
+              <p class="text-gray-400 mb-4">An e-commerce platform built with a clean UI and smooth user interactions, optimized for performance.</p>
+              <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
+            </div>
+          </div>
+          <div class="swiper-slide project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
+            <div class="relative z-10">
+              <img src="https://media.licdn.com/dms/image/D4E12AQGlGLulxo94Dw/article-cover_image-shrink_720_1280/0/1715704795156?e=2147483647&v=beta&t=rxWa7W_PQ3PU5kln1RePaUGY8I6csqhS-stsaj8bhAM" alt="Project Three Image" class="w-full h-64 object-cover rounded-lg">
+            </div>
+            <div class="project-content mt-4">
+              <h3 class="text-2xl font-semibold text-lightblue mb-2">Project Three</h3>
+              <p class="text-gray-400 mb-4">An e-commerce platform built with a clean UI and smooth user interactions, optimized for performance.</p>
+              <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
+            </div>
+          </div>
+          <div class="swiper-slide project-card bg-gray-800 p-6 rounded-lg shadow-lg relative group hover-scale overflow-hidden">
+            <div class="relative z-10">
+              <img src="https://media.licdn.com/dms/image/D4E12AQGlGLulxo94Dw/article-cover_image-shrink_720_1280/0/1715704795156?e=2147483647&v=beta&t=rxWa7W_PQ3PU5kln1RePaUGY8I6csqhS-stsaj8bhAM" alt="Project Three Image" class="w-full h-64 object-cover rounded-lg">
+            </div>
+            <div class="project-content mt-4">
+              <h3 class="text-2xl font-semibold text-lightblue mb-2">Project Three</h3>
+              <p class="text-gray-400 mb-4">An e-commerce platform built with a clean UI and smooth user interactions, optimized for performance.</p>
+              <a href="#" class="inline-block bg-lightblue hover:bg-cyan-600 text-white px-4 py-2 rounded transition duration-300">View Project</a>
+            </div>
+          </div>
+      
+        <!-- Puedes añadir más tarjetas aquí -->
+      </div>
+
+      <!-- Flechas de navegación -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Paginación -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Partículas de fondo para efecto dinámico -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  // Configuración de Swiper
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
+
+  <!-- Skills Section -->
+<section id="skills" class="py-16 bg-gray-900 text-gray-200 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Título con animación -->
+      <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll opacity-0">My Skills</h2>
+  
+      <!-- Contenedor de Habilidades -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-on-scroll opacity-0">
+        <!-- Skill Card 1 -->
+        <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg relative group">
+          <div class="skill-content text-center">
+            <i class="fas fa-code text-6xl text-lightblue mb-4 animate-pulse"></i>
+            <h3 class="text-2xl font-semibold mb-2">Web Development</h3>
+            <div class="skill-bar bg-gray-700 rounded-full h-3 mb-4 relative overflow-hidden">
+              <div class="skill-progress bg-lightblue h-full rounded-full" style="width: 90%;"></div>
+            </div>
+            <p class="text-gray-400">HTML, CSS, JavaScript, Angular, React</p>
+          </div>
+        </div>
+  
+        <!-- Skill Card 2 -->
+        <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg relative group">
+          <div class="skill-content text-center">
+            <i class="fas fa-server text-6xl text-lightblue mb-4 animate-pulse"></i>
+            <h3 class="text-2xl font-semibold mb-2">Backend Development</h3>
+            <div class="skill-bar bg-gray-700 rounded-full h-3 mb-4 relative overflow-hidden">
+              <div class="skill-progress bg-lightblue h-full rounded-full" style="width: 85%;"></div>
+            </div>
+            <p class="text-gray-400">Node.js, .NET Core, Python</p>
+          </div>
+        </div>
+  
+        <!-- Skill Card 3 -->
+        <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg relative group">
+          <div class="skill-content text-center">
+            <i class="fas fa-mobile-alt text-6xl text-lightblue mb-4 animate-pulse"></i>
+            <h3 class="text-2xl font-semibold mb-2">Mobile Development</h3>
+            <div class="skill-bar bg-gray-700 rounded-full h-3 mb-4 relative overflow-hidden">
+              <div class="skill-progress bg-lightblue h-full rounded-full" style="width: 80%;"></div>
+            </div>
+            <p class="text-gray-400">Flutter, Swift, Kotlin</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Animaciones flotantes dinámicas -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+      <div class="skill-particle"></div>
+      <div class="skill-particle"></div>
+      <div class="skill-particle"></div>
+    </div>
+  </section>
+ 
+ <!-- Contact Section -->
 <section id="contact" class="py-16 bg-gray-900 text-gray-200">
     <div class="max-w-7xl mx-auto px-6">
       <!-- Título con animación -->
@@ -754,7 +626,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <label for="message" class="block text-sm font-medium">Message</label>
               <textarea id="message" name="message" required class="mt-1 p-2 w-full bg-gray-700 text-gray-200 rounded-md focus:outline-none focus:ring focus:ring-lightblue" rows="5" placeholder="Your Message"></textarea>
             </div>
-            <button type="submit" class="w-full bg-lightblue text-gray-900 font-semibold py-2 rounded-md hover:bg-cyan-600 transition">Send Message</button>
+            <button id="enviar" type="submit" class="w-full bg-lightblue text-gray-900 font-semibold py-2 rounded-md hover:bg-cyan-600 transition">Send Message</button>
           </form>
         </div>
   
